@@ -1,0 +1,21 @@
+# Unity generated folders
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+
+# Visual Studio / IDE temporary files
+.vs/
+.idea/
+/*.csproj
+/*.sln
+/*.unityproj
+/*.suo
+
+# OS generated files
+.DS_Store
+Thumbs.db

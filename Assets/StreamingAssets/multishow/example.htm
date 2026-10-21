@@ -1,0 +1,167 @@
+<html><head><title>6sense.com: Free Java Applets</title>
+<META NAME="keywords" CONTENT="java,applets,webmaster">
+<META NAME="description" CONTENT="Get free java applets for your site.">
+<META NAME="robots" CONTENT="FOLLOW,INDEX">
+<META HTTP-EQUIV="Content-Language" CONTENT="EN">
+<script language="JavaScript">
+
+function open_win(u,w,h) {
+		w+=5;h+=8;
+		window.open(""+u,"Game",'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width='+w+',height='+h+',screenx='+((screen.availWidth/2)-(w/2))+',screeny='+((screen.availHeight/2)-(h/2)));
+}
+</script>
+<style TYPE="text/css">
+TD{    FONT-FAMILY: arial;    FONT-SIZE: 10pt}
+.nine{    FONT-FAMILY: arial;    FONT-SIZE: 9pt}
+.eight{    FONT-FAMILY: arial;    FONT-SIZE: 8pt}
+A:link{    COLOR: #ffef55;    TEXT-DECORATION: none}
+A:visited{    COLOR: #ffef55;    TEXT-DECORATION: none}
+A:hover{    COLOR: #70ffc0;    TEXT-DECORATION: underline}
+.fade1{    BACKGROUND-COLOR: #2e81e0;    COLOR: white;    FONT-SIZE: 9pt}
+.fade2{    BACKGROUND-COLOR: #0e41a0;    COLOR: white;    FONT-SIZE: 9pt}
+.fade3{    BACKGROUND-COLOR: #0e1180;    COLOR: azure}
+</style>
+</head>
+<body bgcolor=D3E1F7 text=ffffff link=FFEF55 vlink=FFEF55 alink=70FFC0 rightMargin=0 topMargin=0 leftMargin=0 bottomMargin=0>
+<center><BR><BR>
+
+<table border=0 cellpadding=2 cellspacing=0 width=530>
+<tr bgcolor=1E61D0 height=390 valign=top><td align=center>
+
+<table border=2 cellpadding=5 bordercolor=003060 bgcolor=000000 cellspacing=0><tr><td class=nine><b>
+[<a href="default.htm">applet</a>]
+ - [<a href="param.htm">parameter</a>]
+ - [<a href="example.htm">examples</a>]
+ - [<a href="code.htm">generate code</a>]
+</b></td></tr></table><BR>
+
+<!-- #include file="../include/header2.asp" -->
+<script language="JavaScript"><!--
+	function preview(fm){
+		if(gcode(fm)){
+		str = 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width='+(parseInt(fm.width.value)+10)+',height='+(parseInt(fm.height.value)+10);
+		previewWindow = window.open("","Preview",str);
+		previewWindow.document.open();
+		previewWindow.document.writeln("<HTML><HEAD><TITLE>Multi-Pic Slide Show</TITLE></HEAD>");
+		previewWindow.document.writeln("<BODY bgcolor=000000 LEFTMARGIN=0 TOPMARGIN=2 MARGINWIDTH=0 MARGINHEIGHT=0><CENTER>");
+		previewWindow.document.writeln(fm.code.value);
+		previewWindow.document.writeln("</center></body></head>");
+		previewWindow.document.close();
+		previewWindow.focus();
+		}
+	}
+	function gcode(fm){
+		str=	'<applet archive=\"multishow.jar\" code=\"multishow.class\" width='+fm.width.value+' height='+fm.height.value+'>'+
+				'\n<param name=\"id_key\" value=\"'+fm.id_key.value+'\">';
+				
+		switch(fm.example.selectedIndex){
+			case 0: fm.code.value=""; return false;
+			case 1:	str = str +	'\n<param name=\"maximages\" value=\"1\">'+
+								'\n<param name=\"maxshown\" value=\"1\">'+
+								'\n<param name=\"img1\" value=\"image1.gif\">';
+					break;
+			case 2:	str = str +	'\n<param name=\"maximages\" value=\"5\">'+
+								'\n<param name=\"maxshown\" value=\"5\">'+
+								'\n<param name=\"img1\" value=\"image1.gif\">'+
+								'\n<param name=\"img2\" value=\"image2.gif\">'+
+								'\n<param name=\"img3\" value=\"image3.gif\">'+
+								'\n<param name=\"img4\" value=\"image4.gif\">'+
+								'\n<param name=\"img5\" value=\"image5.gif\">';
+					break;
+			case 3:	str = str +	'\n<param name=\"maximages\" value=\"5\">'+
+								'\n<param name=\"maxshown\" value=\"3\">'+
+								'\n<param name=\"img1\" value=\"image1.gif\">'+
+								'\n<param name=\"img2\" value=\"image2.gif\">'+
+								'\n<param name=\"img3\" value=\"image3.gif\">'+
+								'\n<param name=\"img4\" value=\"image4.gif\">'+
+								'\n<param name=\"img5\" value=\"image5.gif\">';
+					break;
+			case 4:	str = str +	'\n<param name=\"maximages\" value=\"5\">'+
+								'\n<param name=\"maxshown\" value=\"3\">'+
+								'\n<param name=\"img1\" value=\"image1.gif\">'+
+								'\n<param name=\"img2\" value=\"image2.gif\">'+
+								'\n<param name=\"img3\" value=\"image3.gif\">'+
+								'\n<param name=\"img4\" value=\"image4.gif\">'+
+								'\n<param name=\"img5\" value=\"image5.gif\">'+
+								'\n<param name=\"bgcolor\" value=\"003060\">';
+					break;
+			case 5:	str = str +	'\n<param name=\"maximages\" value=\"5\">'+
+								'\n<param name=\"maxshown\" value=\"3\">'+
+								'\n<param name=\"img1\" value=\"image1.gif\">'+
+								'\n<param name=\"img2\" value=\"image2.gif\">'+
+								'\n<param name=\"img3\" value=\"image3.gif\">'+
+								'\n<param name=\"img4\" value=\"image4.gif\">'+
+								'\n<param name=\"img5\" value=\"image5.gif\">'+
+								'\n<param name=\"background\" value=\"bg.jpg\">';
+					break;
+			case 6:	str = str +	'\n<param name=\"maximages\" value=\"5\">'+
+								'\n<param name=\"maxshown\" value=\"3\">'+
+								'\n<param name=\"img1\" value=\"image1.gif\">'+
+								'\n<param name=\"img2\" value=\"image2.gif\">'+
+								'\n<param name=\"img3\" value=\"image3.gif\">'+
+								'\n<param name=\"img4\" value=\"image4.gif\">'+
+								'\n<param name=\"img5\" value=\"image5.gif\">'+
+								'\n<param name=\"url1\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"url2\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"url3\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"url4\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"url5\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"background\" value=\"bg.jpg\">';
+					break;
+			case 7:	str = str +	'\n<param name=\"maximages\" value=\"5\">'+
+								'\n<param name=\"maxshown\" value=\"3\">'+
+								'\n<param name=\"linkpicture\" value=\"on\">'+
+								'\n<param name=\"img1\" value=\"image1.gif\">'+
+								'\n<param name=\"img2\" value=\"image2.gif\">'+
+								'\n<param name=\"img3\" value=\"image3.gif\">'+
+								'\n<param name=\"img4\" value=\"image4.gif\">'+
+								'\n<param name=\"img5\" value=\"image5.gif\">'+
+								'\n<param name=\"url1\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"url2\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"url3\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"url4\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"url5\" value=\"http://www.6sense.com/applets/\">'+
+								'\n<param name=\"background\" value=\"bg.jpg\">';
+					break;
+		}
+				
+		fm.code.value=str+'\n</applet>';
+		return true;		
+	}
+//--></script>
+<table border=0 cellpadding=3 cellspacing=0 width=100%>
+<tr class=fade1><td colspan=2> &nbsp;<font color=FFFFFF><b>Note:</td></tr>
+<tr class=fade2><td colspan=2 align=center>
+This section requires JavaScript so if you have if off, this feature will not function.<BR><BR>
+</td></tr>
+
+<form>
+<tr class=fade1><td><BR></td></tr>
+<tr class=fade2><td align=center>
+<BR>
+<input type="hidden" name="id_key" value="6s853137975935159191+6s890667530995822119">
+<input type="hidden" name="width" value="500">
+<input type="hidden" name="height" value="400">
+<select name="example" onChange="preview(this.form);">
+<option value=0>Choose an example
+<option value=1 selected>1. One Image
+<option value=2>2. Five Images
+<option value=3>3. Five Images  w/ 3 maxshown
+<option value=4>4. Five Images  w/ 3 maxshown, bgcolor=003060
+<option value=5>5. Five Images  w/ 3 maxshown & Background Tiled
+<option value=6>6. Five Images  w/ Links
+<option value=7>7. Five Images  w/ Links (whole image)
+</select>
+<BR><BR><input class=a1 type=button onClick="preview(this.form);" value="View Example" id=button1 name=button1>
+<BR><BR>&lt;sample code below&gt;<BR><textarea cols=40 rows=20 name=code></textarea>
+<BR><BR>
+</td></tr></form></table>
+
+<!-- #include file="../include/footer.asp" -->
+
+<BR></td></tr>
+<tr bgcolor=0e31a0><td align=center><font size=1>CopyRight &copy; 1999-2002 <a href="http://www.ionchron.com">IonChron, Inc.</a> &nbsp; &nbsp; <a style="font-size:8pt;" href="http://www.6sense.com/applets/privacy.htm">Privacy Policy</a><BR></td></tr>
+</table>
+<BR>
+</BODY></HTML>
+

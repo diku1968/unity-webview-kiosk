@@ -1,0 +1,217 @@
+<html><head><title>6sense.com: Free Java Applets</title>
+<META NAME="keywords" CONTENT="java,applets,webmaster">
+<META NAME="description" CONTENT="Get free java applets for your site.">
+<META NAME="robots" CONTENT="FOLLOW,INDEX">
+<META HTTP-EQUIV="Content-Language" CONTENT="EN">
+<script language="JavaScript">
+
+function open_win(u,w,h) {
+		w+=5;h+=8;
+		window.open(""+u,"Game",'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width='+w+',height='+h+',screenx='+((screen.availWidth/2)-(w/2))+',screeny='+((screen.availHeight/2)-(h/2)));
+}
+</script>
+<style TYPE="text/css">
+TD{    FONT-FAMILY: arial;    FONT-SIZE: 10pt}
+.nine{    FONT-FAMILY: arial;    FONT-SIZE: 9pt}
+.eight{    FONT-FAMILY: arial;    FONT-SIZE: 8pt}
+A:link{    COLOR: #ffef55;    TEXT-DECORATION: none}
+A:visited{    COLOR: #ffef55;    TEXT-DECORATION: none}
+A:hover{    COLOR: #70ffc0;    TEXT-DECORATION: underline}
+.fade1{    BACKGROUND-COLOR: #2e81e0;    COLOR: white;    FONT-SIZE: 9pt}
+.fade2{    BACKGROUND-COLOR: #0e41a0;    COLOR: white;    FONT-SIZE: 9pt}
+.fade3{    BACKGROUND-COLOR: #0e1180;    COLOR: azure}
+</style>
+</head>
+<body bgcolor=D3E1F7 text=ffffff link=FFEF55 vlink=FFEF55 alink=70FFC0 rightMargin=0 topMargin=0 leftMargin=0 bottomMargin=0>
+<center><BR><BR>
+
+<table border=0 cellpadding=2 cellspacing=0 width=530>
+<tr bgcolor=1E61D0 height=390 valign=top><td align=center>
+
+<table border=2 cellpadding=5 bordercolor=003060 bgcolor=000000 cellspacing=0><tr><td class=nine><b>
+[<a href="default.htm">applet</a>]
+ - [<a href="param.htm">parameter</a>]
+ - [<a href="example.htm">examples</a>]
+ - [<a href="code.htm">generate code</a>]
+</b></td></tr></table><BR>
+
+<!-- #include file="../include/header2.asp" -->
+<script language="JavaScript"><!--
+	function preview(fm){
+		gcode(fm);
+		str = 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width='+(parseInt(fm.width.value)+10)+',height='+(parseInt(fm.height.value)+10);
+		previewWindow = window.open("","Preview",str);
+//		previewWindow = window.open("","Preview","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=300,height=150");
+		previewWindow.document.open();
+		previewWindow.document.writeln("<HTML><HEAD><TITLE>Multi-Pic Slide Show</TITLE></HEAD>");
+		previewWindow.document.writeln("<BODY bgcolor=000000 LEFTMARGIN=0 TOPMARGIN=2 MARGINWIDTH=0 MARGINHEIGHT=0><CENTER>");
+		previewWindow.document.writeln(fm.code.value);
+		previewWindow.document.writeln("</center></body></head>");
+		previewWindow.document.close();
+		previewWindow.focus();
+	}
+	function linkcheck(fm){
+		if( fm.link[0].checked == true){
+			fm.id_key.disabled=false;
+			fm.maintext.disabled=false;
+			fm.mainlink.disabled=false;
+			}
+		else{
+			fm.id_key.disabled=true;
+			fm.maintext.disabled=true;
+			fm.mainlink.disabled=true;
+		}
+	}
+	function gcode(fm){
+		if(fm.width.value==''){fm.width.focus(); alert('Width is missing');return;}
+		if(fm.height.value==''){fm.height.focus(); alert('Height is missing');return;}
+		if(isNaN(fm.maximages.value)){ fm.maximages.focus(); alert("maximages must be a number");return;}
+		if(isNaN(fm.maxshown.value)){ fm.maxshown.focus(); alert("maxshown must be a number");return;}
+		if(parseInt(fm.maximages.value)<=0){ fm.maximages.focus(); alert("maximages have to be greater then 0");return;}
+		if(parseInt(fm.maxshown.value)<=0){ fm.maxshown.focus(); alert("maxshown have to be greater then 0");return;}
+		if(parseInt(fm.maxshown.value)>parseInt(fm.maximages.value)){ fm.maxshown.focus(); alert("maxshown can't be greater then maximages");return;}
+		
+		str=	'<applet archive=\"multishow.jar\" code=\"multishow.class\" width='+fm.width.value+' height='+fm.height.value+'>'
+						
+		if(fm.target.value=='other'){if(fm.target_other.value!='')str=str+'\n<param name=\"target\" value=\"'+fm.target_other.value+'\">';}
+		else 
+		if(fm.target.value!='_blank')str=str+'\n<param name=\"target\" value=\"'+fm.target.value+'\">';
+
+		if(fm.texttype.value!="0")str=str+'\n<param name=\"texttype\" value=\"'+fm.texttype.value+'\">';
+		if(fm.framecolor.value!="FFFFFF")str=str+'\n<param name=\"framecolor\" value=\"'+fm.framecolor.value+'\">';
+		if(fm.bordercolor.value!="FFFFFF")str=str+'\n<param name=\"bordercolor\" value=\"'+fm.bordercolor.value+'\">';
+		if(fm.textcolor.value!="323296")str=str+'\n<param name=\"textcolor\" value=\"'+fm.textcolor.value+'\">';
+		if(fm.bgcolor.value!="000000")str=str+'\n<param name=\"bgcolor\" value=\"'+fm.bgcolor.value+'\">';
+
+		if(fm.background.value!=""){
+			str=str+'\n<param name=\"background\" value=\"'+fm.background.value+'\">'+
+					'\n<param name=\"bgalign\" value=\"'+fm.bgalign.value+'\">';
+			}
+		
+		if(fm.maintext.disabled==false){
+			if(fm.maintext.value!=''&&fm.mainlink.value==''){fm.mainlink.focus(); alert('Main Link is missing');return;}
+			else
+			if(fm.mainlink.value!=''&&fm.maintext.value==''){fm.maintext.focus(); alert('Main Text is missing');return;}
+			else
+			if(fm.mainlink.value!=''&&fm.maintext.value!='')
+			str = str+
+				'\n<param name=\"maintext\" value=\"'+fm.maintext.value+'\">'+
+				'\n<param name=\"mainlink\" value=\"'+fm.mainlink.value+'\">';
+			if(fm.id_key.value!='')str=str+'\n<param name=\"id_key\" value=\"'+fm.id_key.value+'\">';
+		}
+		str=str+'\n<param name=\"maximages\" value=\"'+fm.maximages.value+'\">'+
+				'\n<param name=\"maxshown\" value=\"'+fm.maxshown.value+'\">';
+		i=1;
+		max=parseInt(fm.maximages.value);
+		if(max>9)max=9;
+		while(i<=max){
+			tm=eval("fm.image"+i);
+			if(tm.value==''){tm.focus(); alert("Image "+i+" File name is missing.");return;}
+			if( tm.value.indexOf(".gif") == -1 &&
+				tm.value.indexOf(".jpg") == -1 &&
+				tm.value.indexOf(".bmp") == -1 &&
+				tm.value.indexOf(".png") == -1
+				)
+				{ tm.focus(); alert("Image "+i+" File name is invalid"); return;}
+				
+			str = str +'\n<param name=\"img' + i + '\" value=\"' + tm.value + '\">';
+			tm=eval("fm.text"+i);
+			if(tm.value!="")str = str +'\n<param name=\"text' + i + '\" value=\"' + tm.value + '\">';
+			tm=eval("fm.url"+i);
+			if(tm.value!="")str = str +'\n<param name=\"url' + i + '\" value=\"' + tm.value + '\">';
+			i++;
+		}
+		str = str+'\n</applet>';
+		
+		fm.code.value=str;
+	}
+--></script>
+
+<form id=form1 name=form1>
+<table border=0 cellpadding=3 cellspacing=0 width="100%">
+<tr class=fade1><td colspan=2> &nbsp;<font color=FFFFFF><b>Note:</td></tr>
+<tr class=fade2><td colspan=2 align=center>
+This section requires JavaScript so if you have if off, this feature will not function.<BR><BR>
+</td></tr>
+
+<tr class=fade1><td colspan=2> &nbsp;<font color=FFFFFF><b>Required Parameters:</td></tr>
+<tr class=fade2><td colspan=2 align=center>
+<table border=0 cellpadding=2 cellspacing=2 width="100%">
+<tr class=fade3>	<td width="20%"><B>Width</b></td><td width="30%"><input name="width" size=3 maxlength=3 value=500></td>
+					<td width="20%"><B>Height</b></td><td width="30%"><input name="height" size=3 maxlength=3 value=400></td></tr>
+</table>					
+</td></tr>
+
+<tr class=fade1><td colspan=2> &nbsp;<font color=FFFFFF><b>Optional Parameters:</td></tr>
+<tr class=fade2><td colspan=2 align=center>
+<table border=0 cellpadding=2 cellspacing=2 width="100%">
+<tr class=fade3>	<td width="20%"><B>Target</b></td><td width="30%"><select name="target"><option value="_blank">_blank<option value="_top">_top<option value="_parent">_parent<option value="_self">_self<option value="other">other</select></td>
+					<td width="50%" colspan=2>if other target: <input name="target_other" size=20 value=""></td>
+</tr>
+</table>
+</td></tr>
+
+<tr class=fade1><td colspan=2> &nbsp;<font color=FFFFFF><b>Required Parameters: The Images</td></tr>
+<tr class=fade2><td colspan=2>
+<table border=0 cellpadding=2 cellspacing=2 width="100%">
+<tr class=fade3>	<td width="20%"><B>Max Images</b></td><td width="30%"><input name="maximages" size=3 maxlength=3 value=5></td>
+					<td width="20%"><B>Max Shown</b></td><td width="30%"><input name="maxshown" size=3 maxlength=3 value=3></td></tr>
+</table>
+<table border=0 cellpadding=2 cellspacing=2 width="100%">
+<tr class=fade3 valign=top><td width=10><b>#</b></td><td>Image File</td><td>Text Message <i>(optional)</i></td><td>URL Link <i>(optional)</i></td></tr>
+<tr class=fade3 valign=top><td width=10><b>1</b></td><td><input name="image1" size=15 value="image1.gif"></td><td><input name="text1" size=25></td><td><input name="url1" size=25></td></tr>
+<tr class=fade3 valign=top><td width=10><b>2</b></td><td><input name="image2" size=15 value="image2.gif"></td><td><input name="text2" size=25></td><td><input name="url2" size=25></td></tr>
+<tr class=fade3 valign=top><td width=10><b>3</b></td><td><input name="image3" size=15 value="image3.gif"></td><td><input name="text3" size=25></td><td><input name="url3" size=25></td></tr>
+<tr class=fade3 valign=top><td width=10><b>4</b></td><td><input name="image4" size=15 value="image4.gif"></td><td><input name="text4" size=25></td><td><input name="url4" size=25></td></tr>
+<tr class=fade3 valign=top><td width=10><b>5</b></td><td><input name="image5" size=15 value="image5.gif"></td><td><input name="text5" size=25></td><td><input name="url5" size=25></td></tr>
+<tr class=fade3 valign=top><td width=10><b>6</b></td><td><input name="image6" size=15 value=""></td><td><input name="text6" size=25></td><td><input name="url6" size=25></td></tr>
+<tr class=fade3 valign=top><td width=10><b>7</b></td><td><input name="image7" size=15 value=""></td><td><input name="text7" size=25></td><td><input name="url7" size=25></td></tr>
+<tr class=fade3 valign=top><td width=10><b>8</b></td><td><input name="image8" size=15 value=""></td><td><input name="text8" size=25></td><td><input name="url8" size=25></td></tr>
+<tr class=fade3 valign=top><td width=10><b>9</b></td><td><input name="image9" size=15 value=""></td><td><input name="text9" size=25></td><td><input name="url9" size=25></td></tr>
+</table>
+
+</td></tr>
+
+<tr class=fade1><td colspan=2> &nbsp;<font color=FFFFFF><b>Optional Text Parameters:</td></tr>
+<tr class=fade2><td colspan=2>
+<table border=0 cellpadding=2 cellspacing=2 width="100%">
+<tr class=fade3>	<td width="20%"><B>Border Color</b></td><td width="20%"><input name="bordercolor" size=6 maxlength=6 value=FFFFFF></td>
+					<td width="30%"><B>Frame Color</b></td><td width="30%"><input name="framecolor" size=6 maxlength=6 value=FFFFFF></td></tr>
+<tr class=fade3>	<td><B>Text Color</b></td><td><input name="textcolor" size=6 maxlength=6 value=323296></td>
+					<td><B>Text Type</b></td><td><select name="texttype"><option value="0">0. Normal<option value="1">1. Solid Border<option value="2">2. Floating Border</select></td></tr>
+</table>
+</td></tr>
+
+<tr class=fade1><td colspan=2> &nbsp;<font color=FFFFFF><b>Optional Background Parameters:</td></tr>
+<tr class=fade2><td colspan=2>
+<table border=0 cellpadding=2 cellspacing=2 width="100%">
+<tr class=fade3>	<td width="20%"><B>Bg Color</b></td><td width="20%"><input name="bgcolor" size=6 maxlength=6 value=000000></td>
+					<td width="30%"><B>Background Image</b></td><td width="30%"><input name="background" size=15></td></tr>
+<tr class=fade3>	<td colspan=2><BR></td>
+					<td><B>Bg Align</b></td><td><select name="bgalign"><option value="tile">Tile<option value="center">Center<option value="scale">Scale</select></td></tr>
+</table>
+</td></tr>
+
+<tr class=fade1><td colspan=2> &nbsp;<font color=FFFFFF><b>Full Version Parameters:</b> &nbsp; <input checked class=rlite type=radio name=link value="on" onClick="linkcheck(this.form);">On &nbsp;<input class=rlite type=radio name=link value="off" onClick="linkcheck(this.form);">Off</td></tr>
+<tr class=fade2><td colspan=2>
+<table border=0 cellpadding=2 cellspacing=2 width="100%">
+<tr class=fade3><td><B>ID_Key</b></td><td><input name="id_key" size=30 value="6s890667530995822119"></td></tr>
+<tr class=fade3><td width="40%"><B>Main Text</b></td width="60%"><td><input name="maintext" size=30 value=""></td></tr>
+<tr class=fade3><td width="40%"><B>Main Link</b></td width="60%"><td><input name="mainlink" size=30 value=""></td></tr>
+</table>
+</td></tr>
+
+<tr class=fade1><td colspan=2 align=center><input class=a1 type=reset value="Reset" id=reset1 name=reset1></td></tr>
+<tr class=fade2><td colspan=2 align=center><textarea style="font-size:8pt;color:60FFA0;background:000000" name="code" cols=40 rows=20></textarea></td></tr>
+<tr class=fade1><td colspan=2 align=center><input class=a1 type=button value="Generate Code" onCLick="gcode(this.form);" id=button1 name=button1> &nbsp; <input class=a1 type=button value="Preview" onCLick="preview(this.form);" id=button2 name=button2></td></tr>
+</form></table>
+
+
+<!-- #include file="../include/footer.asp" -->
+
+<BR></td></tr>
+<tr bgcolor=0e31a0><td align=center><font size=1>CopyRight &copy; 1999-2002 <a href="http://www.ionchron.com">IonChron, Inc.</a> &nbsp; &nbsp; <a style="font-size:8pt;" href="http://www.6sense.com/applets/privacy.htm">Privacy Policy</a><BR></td></tr>
+</table>
+<BR>
+</BODY></HTML>
+

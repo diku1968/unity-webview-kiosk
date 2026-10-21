@@ -1,0 +1,21 @@
+{
+    "name": "gpm_manager",
+    "rootNamespace": "",
+    "references": [
+        "gpm_common"
+    ],
+    "includePlatforms": [
+        "Editor",
+        "WebGL",
+        "WindowsStandalone32",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

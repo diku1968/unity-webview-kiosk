@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+	 
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+	<title>Jaipho</title>
+
+	<link href="../jaipho-0.50.00/jaipho-0.50.00/jaipho/jaipho.css" rel="stylesheet" type="text/css"/>
+	
+<script src="../jaipho-0.50.00/jaipho-0.50.00/jaipho/jaipho-0.50.00-src.js" type="text/javascript"></script>
+</head>
+
+<body>
+	
+	<!-- 
+		Important! 
+		Do not remove elements with html attribute id set to some value. Those elements are required by javascript application.
+		All other can be customized as required by project needs.
+	 -->
+	
+	
+	
+	<!-- THUMBNAILS -->
+	<div class="toolbar" id="thumbs-toolbar-top">
+	
+		<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="wing">
+			<!-- 
+				<a class="button" href="">
+					Back 
+				</a>
+			--> 
+			</td>
+			<td class="center">
+				JAIPHO
+			</td>
+			<td class="wing"></td>
+		</tr>
+		</table>
+		
+	</div>
+	
+    <div id="thumbs-container">
+		<div id="thumbs-images-container">
+		</div>	
+		<div id="thumbs-count-text">
+		</div>
+    </div>
+
+	
+	<!-- SLIDER -->
+	<div id="slider-overlay">
+		
+		<div class="toolbar" id="slider-toolbar-top">
+			
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td class="wing">
+					<a class="button" href="javascript: app.ShowThumbsAction();">
+						Thumbnails
+					</a> 
+				</td>
+				<td class="center" id="navi-info">
+				</td>
+				<td class="wing">&nbsp;</td>
+			</tr>
+			</table>
+		</div>
+
+		<div class="toolbar" id="slider-toolbar-bottom">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td>
+					<a class="navi-button" id="navi-prev" href="javascript: void(0);">
+						<img src="../jaipho-0.50.00/jaipho-0.50.00/jaipho/navPrev.png"/>
+					</a> 
+				</td>
+				<td style="width: 80px;">
+					<a class="navi-button" id="navi-play" href="javascript: void(0);">
+						<img src="jaipho/navPlay.png"/> 
+					</a>
+					<a class="navi-button" id="navi-pause" href="javascript: void(0);">
+						<img src="jaipho/navPause.png"/> 
+					</a>
+				</td>
+				<td>
+					<a class="navi-button" id="navi-next" href="javascript: void(0);">
+						<img src="jaipho/navNext.png"/>
+					</a>
+				</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+	
+    <div id="slider-container">
+    </div>
+
+	
+	
+	
+	<script type="text/javascript">
+		
+
+		// basic parameters
+		var TOOLBARS_HIDE_TIMEOUT			=	5000;
+		var SLIDE_SCROLL_DURATION			=	'1.0s';
+		var SLIDESHOW_ROLL_TIMEOUT			=	4000;
+
+		// advanced		
+		var SLIDE_PRELOAD_TIMEOUT			=	1500;
+		var SLIDE_PRELOAD_TIMEOUT_PREV		=	2000;		
+		var MIN_DISTANCE_TO_BE_A_DRAG		=	50;
+		var MAX_DISTANCE_TO_BE_A_TOUCH		=	5;
+		var CHECK_ORIENTATION_INTERVAL		=	1000;
+		var BASE_URL						=	'jaipho/';
+		var FORCE_PORTRAIT					=	false;
+		
+		// debug
+		var DEBUG_MODE						=	false;
+		var DEBUG_LEVELS					=	'app,slider,behavior';
+		
+		 // load images
+		var dao	=	new Jph_Dao();
+
+		dao.ReadImage( 0, 'test-image-1.jpg', 'test-image-1-thumb.jpg', '', '');
+		dao.ReadImage( 1, 'test-image-2.jpg', 'test-image-2-thumb.jpg', 'JAIPHO beta', 'Congratulations. It seems that your installation is working OK.');
+			
+		var app	=	new Jph_Application( dao);
+		app.Init();
+		
+		app.Run();		
+		
+	</script>
+	
+
+</body>
+</html>

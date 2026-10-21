@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+    <title>Untitled Page</title>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAdW0q4vVkRgJ9QT8bsWvPrhTH_IuI8jgHoUJlGk_Y5S4cAS-dYxT85CczZb0E0Owd0TVDX7r3GUZL7g"
+      type="text/javascript"></script>
+    <script language="'Javascript'" type='text/javascript'>
+
+    function loadEarth(mapdiv) {
+   if (GBrowserIsCompatible()) {
+      var point;
+      if(!mapdiv)return true;
+      var map=new GMap2(document.getElementById("map"));
+      map.addControl(new GOverviewMapControl());
+      map.enableDoubleClickZoom();
+      map.enableScrollWheelZoom();
+      map.addControl(new GMapTypeControl());
+      map.addControl(new GSmallMapControl());
+      var marker = new GMarker(new GLatLng(23.2200, 69.7369));
+      map.setCenter(new GLatLng(23.2200, 69.7369),17);
+      GEvent.addListener(marker, "click", function() {
+    marker.openInfoWindowHtml("hii");});
+      map.addOverlay(marker);
+        map.setCenter(new GLatLng(23.2200, 69.7369), 16);
+      map.setMapType(G_SATELLITE_MAP);
+      var polyline = new GPolyline([new GLatLng(23.2200, 69.7369),
+    new GLatLng(23.2200, 69.7369),
+    new GLatLng( 23.2200, 69.7369)], "#3333cc", 10);
+      }
+      map.addOverlay(polyline);
+ }
+    </script>
+</head>
+ <body onload="loadEarth('map')" onunload="GUnload()" style=" 
+                background-color:Transparent">
+    <div id="map" style="width: 500px; height: 300px"></div>
+</body>
+</html>
